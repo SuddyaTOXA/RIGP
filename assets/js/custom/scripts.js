@@ -39,12 +39,106 @@ jQuery(function($){
         //     $(document.body).toggleClass('overflow');
         // });
         // $(window).on('scroll', function() {
-            $('#fullpage').fullpage({
-                anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
-                menu: '#menu'
-            });
+        //     $('#fullpage').fullpage({
+        //         anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
+        //         menu: '#menu'
+        //     });
         // });
-	});
+        if ( $('#fullpage').length ) {
+            var footer = $('#footer'),
+                footerSlide = $('.section.footer'),
+                footerHeight = footer.outerHeight(),
+                rightNav = $('.right-nav'),
+                rightNavHeight = rightNav.outerHeight() / 2,
+                box = $('.slide-box'),
+                maxH = maxHeight(box),
+                fullWinHeight = $(window).height(),
+                winHeight = fullWinHeight - $('#header').height(),
+                respHeight = 0;
 
+            function maxHeight(box) {
+                var maxHeight = 0;
+                box.each(function () {
+                    if ($(this).outerHeight() > maxHeight) {
+                        maxHeight = $(this).outerHeight();
+                    }
+                });
+                return maxHeight;
+            }
+
+            function fullpageCustomInitialize(respHeight) {
+                $('#fullpage').fullpage({
+                    verticalCentered: true,
+                    css3: false,
+                    anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
+                    menu: '#myMenu',
+                    navigationPosition: 'right',
+                    // continuousHorizontal: true,
+                    // continuousHorizontalKey: 'cmFsaWFuY2Uub3JnX3RHNVkyOXVkR2x1ZFc5MWMwaHZjbWw2YjI1MFlXdz1kYkk=',
+                    slidesNavigation: true,
+                    slidesNavPosition: 'bottom',
+                    // controlArrows: true,
+                    responsiveHeight: respHeight + 20,
+                    responsiveWidth: 640,
+                    afterLoad: function (anchorLink, index) {
+                        setTimeout(function () {
+                            if ( !$('body').hasClass('fp-responsive') ) {
+                                var slideBox = $('.slide-box').eq(index - 1),
+                                    slideTitle = slideBox.find('.slide-title'),
+                                    slideContent = slideBox.find('.content *'),
+                                    slideBtn = slideBox.find('.btn');
+
+                                // if (slideTitle.hasClass('invisible')) {
+                                //     slideTitle.removeClass('invisible').addClass('visible animated fadeInUp');
+                                // }
+                                // if (slideContent.hasClass('invisible')) {
+                                //     slideContent.removeClass('invisible').addClass('visible animated fadeInUp');
+                                // }
+                                // if (slideBtn.hasClass('invisible')) {
+                                //     slideBtn.removeClass('invisible').addClass('visible animated fadeInUp');
+                                // }
+                            }
+                        }, 10)
+                    },
+                    onLeave: function(index, nextIndex, direction){
+                        var leavingSection = $(this),
+                            header = $('#header');
+
+                        //after leaving section 2
+                        // if(index == 1 && direction =='down'){
+                        //     if (!(header.hasClass('fullpage-bg'))) {
+                        //         header.addClass('fullpage-bg');
+                        //     }
+                        // } else if(index == 2 && direction == 'up'){
+                        //     if (header.hasClass('fullpage-bg')) {
+                        //         header.removeClass('fullpage-bg');
+                        //     }
+                        // }
+                    }
+                });
+
+                setTimeout(function () {
+                    footerSlide.height(footerHeight);
+                }, 400);
+            }
+
+            fullpageCustomInitialize(maxH);
+
+            $(window).on('resize', function () {
+                var footerHeight    = footer.outerHeight(),
+                    rightNavHeight  = rightNav.outerHeight() / 2,
+                    maxH            = maxHeight(box),
+                    fullWinHeight   = $(window).height(),
+                    winHeight       = fullWinHeight - $('.header').height();
+
+                setTimeout(function () {
+                    if ( $('html').hasClass('fp-enabled') ) {
+                        $.fn.fullpage.destroy('all');
+                    }
+                    fullpageCustomInitialize(maxH);
+                }, 10);
+            });
+        }
+	});
 });
 
