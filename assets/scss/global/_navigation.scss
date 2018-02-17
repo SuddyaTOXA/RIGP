@@ -1,0 +1,48 @@
+.main-nav {
+  float: right;
+  margin-top: 10px;
+  ul {
+    > li {
+      display: inline-block;
+      &:last-child {
+        > a {
+          padding-right: 0;
+        }
+      }
+      > a {
+        padding: 5px 18px;
+        font-size: $size-small;
+        font-weight: $medium;
+        color: $white;
+        &:hover,
+        &:focus {
+          color: $color-text3;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+  .square {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      @include transform(0, -50%);
+      background-color: $color-bg5;
+    }
+    &.yellow {
+      &:before {
+        background-color: $color-bg6;
+      }
+    }
+    &.red {
+      &:before {
+        background-color: $color-bg7;
+      }
+    }
+  }

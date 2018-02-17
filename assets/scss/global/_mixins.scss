@@ -9,7 +9,7 @@
 }
 
 // TRANSITION
-@mixin transition($properties) {
+@mixin transition($properties: $transition-other) {
   @include css3-prefix('transition', $properties);
 }
 
@@ -20,7 +20,7 @@
 
 // FONT
 @mixin font($weight: $normal, $size: $size-main, $family: $font-main, $line-height: $line-height) {
-  font: $weight $size/$line-height $family;
+  font: $weight #{$size}/#{$line-height} $family;
 }
 
 // BACKGROUND IMAGE
@@ -30,4 +30,20 @@
     size: $bg_size;
     repeat: $bg_repeat;
   }
+}
+
+// BACKGROUND header GRADIENT
+@mixin header-background-gradient($color: #121617, $to: 60%) {
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(180deg, $color 0%, rgba($color, 0.29) $to, rgba($color, 0) 100%);
+  background-image:    -moz-linear-gradient(180deg, $color 0%, rgba($color, 0.29) $to, rgba($color, 0) 100%);
+  background-image:     -ms-linear-gradient(180deg, $color 0%, rgba($color, 0.29) $to, rgba($color, 0) 100%);
+  background-image:      -o-linear-gradient(180deg, $color 0%, rgba($color, 0.29) $to, rgba($color, 0) 100%);
+  background-image:         linear-gradient(180deg, $color 0%, rgba($color, 0.29) $to, rgba($color, 0) 100%);
+}
+
+//TRANSFORM
+@mixin transform ( $x: -50%, $y: -50% ) {
+  @include css3-prefix('transform', translate($x, $y));
+
 }

@@ -1,32 +1,50 @@
 /*fonts*/
 $font-main: 'Roboto', Arial, sans-serif;
-$font-heading: 'Patua One', 'Roboto', Arial, sans-serif;
+$font-gotham: 'Gotham', $font-main;
 
 /*fonts-weight*/
+$light: 300; //book
 $normal: 400;
 $medium: 500;
 $bold: 700;
 
 /*fonts-size*/
-$size-main: 18px;
+$size-13: 13px;
+$size-smaller: 14px;
 $size-small: 16px;
-$size-heading1: 44px;
-$size-heading2: 40px;
-$size-heading3: 28px;
+$size-main: 18px;
+$size-big: 24px;
+$size-40: 40px;
+$size-heading1: 60px;
+$size-heading2: 36px;
+$size-heading3: 32px;
+$size-heading-30: 30px;
+$size-heading-21: 21px;
 
 /*line-height*/
-$line-height: 1.6;
+$line-height: 1.4;
+$line-height-big: 1.6;
+$line-height-middle: 1.2;
 $line-height-heading: 1;
 
 /*colors*/
 $white: #ffffff;
-$color-text: #333333;
-$color-text2: #313b43;
-$color-text3: #ff614c;
+$color-text: #121617;
+$color-text2: #FBBF20;
+$color-text3: #05BCC9;
+$color-text4: #CB3433;
+$color-text5: #E48E24;
+$color-text6: #D7DDDF;
+
+
 $color-bg1: $white;
-$color-bg2: #ff4948;
-$color-bg3: #1d4d94;
-$color-bg4: #d5d5d5;
+$color-bg2: #F9FAFC;
+$color-bg3: #E6E7E9;
+$color-bg4: #121617;
+$color-bg5: #05BCC9;
+$color-bg6: #FBBF20;
+$color-bg7: #CB3433;
+//$color-bg8: #121617;
 
 /*transition*/
 $transition-link: 0.2s;
