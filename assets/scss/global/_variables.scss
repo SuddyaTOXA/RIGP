@@ -7,6 +7,7 @@ $light: 300; //book
 $normal: 400;
 $medium: 500;
 $bold: 700;
+$black: 900;
 
 /*fonts-size*/
 $size-13: 13px;
@@ -14,6 +15,7 @@ $size-smaller: 14px;
 $size-small: 16px;
 $size-main: 18px;
 $size-big: 24px;
+$size-30: 30px;
 $size-40: 40px;
 $size-heading1: 60px;
 $size-heading2: 36px;
@@ -35,21 +37,22 @@ $color-text3: #05BCC9;
 $color-text4: #CB3433;
 $color-text5: #E48E24;
 $color-text6: #D7DDDF;
+$color-text9: #8B84DB;
 
-
-$color-bg1: $white;
-$color-bg2: #F9FAFC;
-$color-bg3: #E6E7E9;
-$color-bg4: #121617;
-$color-bg5: #05BCC9;
-$color-bg6: #FBBF20;
-$color-bg7: #CB3433;
-//$color-bg8: #121617;
+$color-bg-white: $white;
+$color-bg: #121617;
+$color-bg2: #FBBF20;
+$color-bg3: #05BCC9;
+$color-bg4: #CB3433;
+$color-bg5: #E48E24;
+$color-bg6: #D7DDDF;
+$color-bg7: #E6E7E9;
+$color-bg8: #F9FAFC;
 
 /*transition*/
 $transition-link: 0.2s;
 $transition-other: 0.35s;
 
 /*border-radius*/
-$radius-main: 10px;
-$radius-small: 5px;
+$radius-main: 5px;
+//$radius-small: 5px;

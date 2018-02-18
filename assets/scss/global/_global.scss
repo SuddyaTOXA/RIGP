@@ -2,7 +2,7 @@
 /*------------------------------RESET DEFAULT STYLES--------------------------------*/
 /*----------------------------------------------------------------------------------*/
 html,body                       { width:100%; height:100%; }
-body                            { padding:0; margin:0; @include font(); background: $color-bg1; color: $color-text;
+body                            { padding:0; margin:0; @include font(); background: $color-bg7; color: $color-text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -86,9 +86,9 @@ img {
 }
 
 .content {
+  line-height: $line-height;
   * {
     margin-bottom: 12px;
-    line-height: $line-height;
     &:last-child {
       margin-bottom: 0;
     }
@@ -146,7 +146,7 @@ img {
   position: relative;
   min-height: 100%;
   //margin-bottom: -130px;
-  background-color: $color-bg3;
+  background-color: $color-bg7;
   &:after {
     //content: '';
     //display: block;

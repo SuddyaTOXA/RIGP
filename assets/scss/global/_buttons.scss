@@ -1,0 +1,45 @@
+a.btn, .btn {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 12px 16px 9px;
+  font-size: $size-main;
+  line-height: $line-height-middle;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid $color-bg3;
+  @include border-radius(4em);
+  background-color: $color-bg3;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: $color-text3;
+    background-color: transparent;
+  }
+  &.small {
+    font-size: $size-13;
+  }
+  &.big {
+    padding-top: 20px;
+    padding-bottom: 19px;
+    min-width: 280px;
+    font-family: $font-gotham;
+    font-weight: $medium;
+    font-size: 20px;
+    text-transform: initial;
+  }
+  &.yellow {
+    background-color: $color-bg5;
+    border-color: $color-bg5;
+    &:hover,
+    &:focus {
+      color: $color-text5;
+      background-color: transparent;
+    }
+  }
+  &.red {}
+  &.orange {}
+}

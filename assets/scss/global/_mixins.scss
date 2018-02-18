@@ -14,7 +14,7 @@
 }
 
 // BORDER RADIUS
-@mixin border-radius($radius: 10px) {
+@mixin border-radius($radius: $radius-main) {
   @include css3-prefix('border-radius', $radius);
 }
 
@@ -54,5 +54,6 @@
 //TRANSFORM
 @mixin transform ( $x: -50%, $y: -50% ) {
   @include css3-prefix('transform', translate($x, $y));
-
 }
+
+

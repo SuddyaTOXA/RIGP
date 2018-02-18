@@ -33,16 +33,16 @@
       width: 10px;
       height: 10px;
       @include transform(0, -50%);
-      background-color: $color-bg5;
+      background-color: $color-bg3;
     }
     &.yellow {
       &:before {
-        background-color: $color-bg6;
+        background-color: $color-bg2;
       }
     }
     &.red {
       &:before {
-        background-color: $color-bg7;
+        background-color: $color-bg4;
       }
     }
   }

@@ -44,6 +44,21 @@ jQuery(function($){
         //         menu: '#menu'
         //     });
         // });
+        // FOR FULLPAGE
+
+        // header fade
+        $(function() {
+            var header = $('#header');
+
+            setTimeout(function(){
+                $('.animated-wrap').addClass('visible animated fadeIn');
+            },100);
+
+            setTimeout(function(){
+                header.addClass('show');
+            },800);
+        });
+
         if ( $('#fullpage').length ) {
             var footer = $('#footer'),
                 footerSlide = $('.section.footer'),
@@ -68,6 +83,7 @@ jQuery(function($){
 
             function fullpageCustomInitialize(respHeight) {
                 $('#fullpage').fullpage({
+                    keyboardScrolling: false,
                     verticalCentered: true,
                     css3: false,
                     anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
@@ -84,19 +100,31 @@ jQuery(function($){
                         setTimeout(function () {
                             if ( !$('body').hasClass('fp-responsive') ) {
                                 var slideBox = $('.slide-box').eq(index - 1),
-                                    slideTitle = slideBox.find('.slide-title'),
-                                    slideContent = slideBox.find('.content *'),
+                                    slideTitle = slideBox.find('.slide-title, .since-title'),
+                                    slideContent = slideBox.find('.content *, .since-top-box'),
+                                    slideContactBox = slideBox.find('.slide-contact-list > li'),
+                                    quote = slideBox.find('.quote'),
+                                    quoteAuthor = slideBox.find('.quote-author'),
                                     slideBtn = slideBox.find('.btn');
 
-                                // if (slideTitle.hasClass('invisible')) {
-                                //     slideTitle.removeClass('invisible').addClass('visible animated fadeInUp');
-                                // }
-                                // if (slideContent.hasClass('invisible')) {
-                                //     slideContent.removeClass('invisible').addClass('visible animated fadeInUp');
-                                // }
-                                // if (slideBtn.hasClass('invisible')) {
-                                //     slideBtn.removeClass('invisible').addClass('visible animated fadeInUp');
-                                // }
+                                if (slideTitle.hasClass('invisible')) {
+                                    slideTitle.removeClass('invisible').addClass('visible animated fadeInUp');
+                                }
+                                if (slideContent.hasClass('invisible')) {
+                                    slideContent.removeClass('invisible').addClass('visible animated fadeInUp');
+                                }
+                                if (slideBtn.hasClass('invisible')) {
+                                    slideBtn.removeClass('invisible').addClass('visible animated fadeInUp');
+                                }
+                                if (slideContactBox.hasClass('invisible')) {
+                                    slideContactBox.removeClass('invisible').addClass('visible animated fadeInUp');
+                                }
+                                if (quote.hasClass('invisible')) {
+                                    quote.removeClass('invisible').addClass('visible animated fadeInUp');
+                                }
+                                if (quoteAuthor.hasClass('invisible')) {
+                                    quoteAuthor.removeClass('invisible').addClass('visible animated fadeInUp');
+                                }
                             }
                         }, 10)
                     },
@@ -138,6 +166,21 @@ jQuery(function($){
                     fullpageCustomInitialize(maxH);
                 }, 10);
             });
+
+            //for animate
+            function animate() {
+                /*viewportchecker to trigger animations throughout*/
+                $(".slide-title, .slide-box .content *, .slide-contact-list > li, .since-top-box, .since-title, .quote, .quote-author").addClass("invisible").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp',
+                    offset: 50
+                });
+                $(".slide-box .btn").addClass("invisible").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp',
+                    offset: 0
+                });
+            }
+
+            animate();
         }
 	});
 });
