@@ -154,3 +154,9 @@ img {
     //height: 130px;
   }
 }
+#main-content {
+  padding-top: 100px;
+  .home & {
+    padding-top: 0;
+  }
+}

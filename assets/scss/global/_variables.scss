@@ -15,6 +15,7 @@ $size-smaller: 14px;
 $size-small: 16px;
 $size-main: 18px;
 $size-big: 24px;
+$size-25: 25px;
 $size-30: 30px;
 $size-40: 40px;
 $size-heading1: 60px;
@@ -38,6 +39,7 @@ $color-text4: #CB3433;
 $color-text5: #E48E24;
 $color-text6: #D7DDDF;
 $color-text9: #8B84DB;
+$color-text10: #B3B3B3;
 
 $color-bg-white: $white;
 $color-bg: #121617;
@@ -48,6 +50,7 @@ $color-bg5: #E48E24;
 $color-bg6: #D7DDDF;
 $color-bg7: #E6E7E9;
 $color-bg8: #F9FAFC;
+$color-bg10: #B3B3B3;
 
 /*transition*/
 $transition-link: 0.2s;
@@ -55,4 +58,7 @@ $transition-other: 0.35s;
 
 /*border-radius*/
 $radius-main: 5px;
-//$radius-small: 5px;
+$radius-big: 10px;
+
+$coll-10-1:(100% / 10) * 1;
+$coll-12-1:(100% / 12) * 1;

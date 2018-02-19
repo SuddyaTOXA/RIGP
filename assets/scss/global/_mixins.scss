@@ -50,10 +50,18 @@
   background-image:      -o-linear-gradient($deg, rgba($color, $opacity-f) $to, rgba($color, $opacity-l) 100%);
   background-image:         linear-gradient($deg, rgba($color, $opacity-f) $to, rgba($color, $opacity-l) 100%);
 }
+@mixin text-background-gradient($deg: 360deg, $color-1: #05BCC9, $color-2: #FBBF20) {
+  background: -webkit-linear-gradient($deg, $color-1, $color-2);
+  background:    -moz-linear-gradient($deg, $color-1, $color-2);
+  background:     -ms-linear-gradient($deg, $color-1, $color-2);
+  background:      -o-linear-gradient($deg, $color-1, $color-2);
+  background:         linear-gradient($deg, $color-1, $color-2);
+}
 
 //TRANSFORM
 @mixin transform ( $x: -50%, $y: -50% ) {
   @include css3-prefix('transform', translate($x, $y));
 }
+
 
 

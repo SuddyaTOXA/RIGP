@@ -1,11 +1,15 @@
 #fullpage {
   color: $white;
 }
+
+
 .section {
-  position: relative;
-  min-height: 100vh;
-  @include bg();
-  background-attachment: fixed;
+  .home & {
+    position: relative;
+    min-height: 100vh;
+    @include bg();
+    background-attachment: fixed;
+  }
   &.overlay {
     position: relative;
     &:before {
