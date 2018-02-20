@@ -34,8 +34,10 @@ a.btn, .btn {
   position: relative;
   display: inline-block;
   max-width: 100%;
+  min-width: 156px;
   margin: 0;
-  padding: 12px 16px 9px;
+  padding: 13px 15px 12px;
+  font-family: $font-main;
   font-size: $size-main;
   font-weight: $bold;
   line-height: $line-height-middle;
@@ -51,6 +53,11 @@ a.btn, .btn {
   &:focus {
     color: $color-text3;
     background-color: transparent;
+    .raliance-arrow-right {
+      &:before {
+        color: $color-text3;
+      }
+    }
   }
   span[class^="raliance-"] {
     position: relative;
@@ -61,6 +68,9 @@ a.btn, .btn {
     &:before {
       @include transition($transition-link);
     }
+  }
+  .fas {
+    color: $white;
   }
   &.small {
     min-width: 148px;
@@ -79,13 +89,18 @@ a.btn, .btn {
     font-size: 20px;
     text-transform: initial;
   }
-  &.yellow {
+  &.orange {
     background-color: $color-bg5;
     border-color: $color-bg5;
     &:hover,
     &:focus {
       color: $color-text5;
       background-color: transparent;
+      .raliance-arrow-right {
+        &:before {
+          color: $color-text5;
+        }
+      }
     }
   }
   &.red {
@@ -97,6 +112,11 @@ a.btn, .btn {
       background-color: transparent;
       .raliance-arrow-go-inverse:before {
         color: $color-text4;
+      }
+      .raliance-arrow-right {
+        &:before {
+          color: $color-text4;
+        }
       }
     }
   }
@@ -121,3 +141,29 @@ a.btn, .btn {
   }
 }
 
+a.learn-more-filter-group,
+.learn-more-filter-group,
+a.clear-filter-group,
+.clear-filter-group {
+  display: block;
+  padding: 5px 0;
+  font-size: 12px;
+  line-height: $line-height-middle;
+  letter-spacing: -.03em;
+  word-spacing: -.02em;
+  color: #B0B0B0;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  .raliance-what,
+  .raliance-close {
+    padding-right: 4px;
+    font-size: 14px;
+  }
+  &:hover,
+  &:focus {
+    color: $color-text3;
+    text-decoration: none;
+  }
+}
