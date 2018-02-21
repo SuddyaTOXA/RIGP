@@ -2,31 +2,36 @@
   display: block;
   width: 100%;
   max-width: 100%;
-  padding: 22px 20px 23px;
+  padding: 5px 10px 6px;
+  min-height: 32px;
   background: #fff;
-  border: 0;
-  //font: 400 1.125rem/1 gotham-book,myriadproregular,Arial,sans-serif;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  border: 1px solid #E0E0E0;
+  font-family: $font-main;
+  font-size: $size-13;
+  font-weight: $normal;
   text-transform: none;
-  color: #131617
+  color: $color-text;
+  @include border-radius(2px);
 }
 
 .input-style::-webkit-input-placeholder {
-  color: #8d8f94
+  color: #979797;
+  @include transition();
 }
 
 .input-style::-moz-placeholder {
-  color: #8d8f94
+  color: #979797;
+  @include transition();
 }
 
 .input-style:-ms-input-placeholder {
-  color: #8d8f94
+  color: #979797;
+  @include transition();
 }
 
 .input-style:-moz-placeholder {
-  color: #8d8f94
+  color: #979797;
+  @include transition();
 }
 
 .check-style input[type=radio],
@@ -99,35 +104,79 @@
   background-color: $color-bg3;
 }
 
-*::-webkit-input-placeholder {
-  font-family: "HelveticaNeueCyr", Helvetica, Arial, sans-serif;
-  -webkit-transition: 0.35s;
-  -moz-transition: 0.35s;
-  -o-transition: 0.35s;
-  transition: 0.35s;
-}
-*::-moz-placeholder {
-  font-family: "HelveticaNeueCyr", Helvetica, Arial, sans-serif;
-  -webkit-transition: 0.35s;
-  -moz-transition: 0.35s;
-  -o-transition: 0.35s;
-  transition: 0.35s;
-}
-*:-ms-input-placeholder {
-  font-family: "HelveticaNeueCyr", Helvetica, Arial, sans-serif;
-  -webkit-transition: 0.35s;
-  -moz-transition: 0.35s;
-  -o-transition: 0.35s;
-  transition: 0.35s;
-}
-*:-moz-placeholder {
-  font-family: "HelveticaNeueCyr", Helvetica, Arial, sans-serif;
-  -webkit-transition: 0.35s;
-  -moz-transition: 0.35s;
-  -o-transition: 0.35s;
-  transition: 0.35s;
-}
 *:focus::-webkit-input-placeholder { opacity: 0; }
 *:focus::-moz-placeholder { opacity: 0; }
 *:focus:-ms-input-placeholder { opacity: 0; }
 *:focus:-moz-placeholder { opacity: 0; }
+
+.selectboxit-container {
+  .selectboxit-open {
+    @include border-radius(2px 2px 0 0);
+    .selectboxit-default-arrow {
+      @include css3-prefix('transform' , 'translate(0, -50%) rotate(225deg)');
+    }
+  }
+  .selectboxit-default-arrow {
+    right: 5px !important;
+    top: 48% !important;
+    width: 9px;
+    height: 9px;
+    border: 3px solid $color-bg3;
+    border-left: none;
+    border-top: none;
+    //@include transform(0, -50%);
+    @include css3-prefix('transform-origin', '50% 50%');
+    @include css3-prefix('transform' , 'translate(0, -50%) rotate(45deg)');
+    @include transition();
+  }
+  .selectboxit-options {
+    max-height: 240px;
+    @include border-radius(0 0 2px 2px);
+    -webkit-box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  .selectboxit-options a,
+  span {
+    line-height: 30px;
+    height: 32px;
+    //@include transition();
+  }
+  * {
+    font-family: $font-main;
+    font-weight: $normal;
+    font-size: $size-13;
+  }
+  .selectboxit {
+    @include border-radius(2px);
+  }
+  .selectboxit-option-icon{
+    margin-right: 5px;
+  }
+  .selectboxit-option-icon-container {
+    width: 18px;
+  }
+}
+.selectboxit-btn {
+  border-color: #E0E0E0;
+  background: $white;
+}
+.selectboxit-selected {
+  background: $white;
+  //@include border-radius(2px);
+}
+//.selectboxit-focus {
+//
+//}
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {}
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+  //background-color: $color-bg3;
+}
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus,
+.selectboxit-btn.selectboxit-enabled:active {
+  background: $white;
+  color: $color-text;
+}

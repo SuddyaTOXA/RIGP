@@ -39,7 +39,7 @@
   font-style: normal;
 }
 
-[class^="raliance-"], [class*=" raliance-"] {
+span[class^="raliance-"], span[class*=" raliance-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'raliance' !important;
   speak: none;

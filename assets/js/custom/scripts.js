@@ -46,6 +46,83 @@ jQuery(function($){
         // });
         // FOR FULLPAGE
 
+        //or filters
+        if ($('.filter-box').length) {
+            //for select
+            if ($("select#category").length) {
+                $("select#category").selectBoxIt({
+                    autoWidth: false
+                });
+            }
+
+            //for range
+            // if (typeof ionRangeSlider !== 'undefined') {
+                if ($('#range').length) {
+                    $("#range").ionRangeSlider({
+                        type: "double",
+                        prettify_enabled: false,
+                        hide_min_max: true,
+                        min: 2010,
+                        max: 2018,
+                        from: 2012,
+                        to: 2016,
+                        step: 1
+                    });
+                }
+            // }
+
+            //clear filter group
+            if ($('.filter-group .clear-filter-group')) {
+                $('.filter-group .clear-filter-group').on('click', function () {
+                    var btn = $(this),
+                        parerntBox = btn.parents('.filter-group'),
+                        check = parerntBox.find('input[type=checkbox]'),
+                        radio  = parerntBox.find('input[type=radio]');
+
+                    check.removeAttr('checked');
+                    radio.removeAttr('checked')
+                })
+            }
+
+            //reset form
+            if ($('.clear-filter-group[type=reset]').length) {
+                $('.clear-filter-group[type=reset]').on('click', function () {
+                    var parentBox = $(this).parents('.filter-box'),
+                        inputVal = parentBox.find('.clear');
+
+                        inputVal.removeClass('clear');
+                })
+            }
+
+            //show more filters
+            if ($('.btn-show-more').length) {
+                $('.btn-show-more').on('click', function () {
+                   var box = $(this).parents('.filter-top-group');
+                })
+            }
+
+            //clear input text
+            if ($('.input-box input[type=text]')) {
+                $('.input-box input[type=text]').on('change', function () {
+                    var inputVal = $(this).val();
+                    if (inputVal != '') {
+                        $(this).addClass('clear');
+                    } else {
+                        $(this).removeClass('clear');
+                    }
+                })
+
+                if ($('.clear-input').length) {
+                    $('.clear-input').on('click', function () {
+                      var parentBox = $(this).parents('.input-box'),
+                          clearInput = parentBox.find('input[type=text]');
+
+                      clearInput.removeClass('clear').val('');
+                    })
+                }
+            }
+        }
+
         // header fade
         $(function() {
             var header = $('#header');

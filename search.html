@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="assets/js/fullpage/jquery.fullpage.min.css" rel="stylesheet" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery.selectboxit/3.8.0/jquery.selectBoxIt.css" rel="stylesheet" type="text/css">
+    <!--<link href="//cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/css/ion.rangeSlider.min.css" rel="stylesheet" type="text/css">-->
+    <!--<link href="//cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/css/ion.rangeSlider.skinHTML5.min.css" rel="stylesheet" type="text/css">-->
     <link href="assets/css/screen.css" rel="stylesheet" type="text/css">
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,20 +63,69 @@
                     <div class="raliance-form-wrap">
                         <form action="" class="raliance-form">
                             <div class="filter-box">
-                                <div class="filter-group"></div>
-                                <div class="filter-group">
+                                <div class="filter-top-group">
+                                    <ul class="filter-top-group-list">
+                                        <li>
+                                            <label for="organization-name">Organization name</label>
+                                            <div class="input-box">
+                                                <input id="organization-name" class="input-style" name="organization-name" type="text" placeholder="Organization name" value="">
+                                                <span class="raliance-close clear-input"></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="project-name">Project name</label>
+                                            <div class="input-box">
+                                                <input id="project-name" class="input-style" name="project-name" type="text" placeholder="Enter keyword">
+                                                <span class="raliance-close clear-input"></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="state">State</label>
+                                            <div class="input-box">
+                                                <input id="state" name="state" class="input-style" type="text" placeholder="Start typing">
+                                                <span class="raliance-close clear-input"></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="category">Category</label>
+                                            <select name="category" id="category">
+                                                <option value="SelectBoxIt themes:" data-iconurl="img/plus.png">
+                                                    Category 1
+                                                </option>
+                                                <option value="Twitter Bootstrap" data-iconurl="img/plus.png">
+                                                    Category 2
+                                                </option>
+                                                <option value="jQuery UI">
+                                                    Category 3
+                                                </option>
+                                                <option value="jQuery Mobile" data-iconurl="img/plus.png">
+                                                    Category 4
+                                                </option>
+                                            </select>
+                                        </li>
+                                        <li><h3 class="filter-group-title">Round/Year of project founding</h3></li>
+                                        <li><input type="text" id="range" name="years" value=""></li>
+                                        <li>
+                                            <button class="btn small blue btn-apply" type="submit">Apply</button>
+                                            <button class="clear-filter-group" type="reset"><span class="raliance-close"></span> clear filter</button>
+                                            <span class="btn small grey inverse btn-show-more">Show more filters</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="filter-bottom-group">
+                                    <div class="filter-group">
                                     <ul class="filter-group-list">
                                         <li>
                                             <h3 class="filter-group-title">Communities/Populations</h3>
                                             <span class="filter-group-desc">Who did this grant serve/engage?</span>
-                                            <button class="clear-filter-group"><span class="raliance-close"></span> clear this filter</button>
+                                            <span class="clear-filter-group"><span class="raliance-close"></span> clear this filter</span>
                                         </li>
                                         <li>
                                             <ul class="filter-check-list">
                                                 <li>
                                                      <span class="check-style">
                                                         <label>
-                                                            <input name="" type="checkbox" checked="checked">
+                                                            <input name="" type="checkbox" >
                                                             <span>Survivors</span>
                                                         </label>
                                                     </span>
@@ -253,263 +305,256 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="filter-group">
-                                    <ul class="filter-group-list">
-                                        <li>
-                                            <h3 class="filter-group-title">Systems</h3>
-                                            <span class="filter-group-desc">This grant worked with or within what systems or institutions?</span>
-                                            <button class="clear-filter-group"><span class="raliance-close"></span> clear this filter</button>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox" checked="checked">
-                                                            <span>Criminal justice</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Therapeutic/mental health</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Advocacy/rape crisis</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>School (K-12)</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Colleges/Universities</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Sport</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Fostercare</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Restaurant/hospitality industry</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="filter-group">
-                                    <ul class="filter-group-list">
-                                        <li>
-                                            <h3 class="filter-group-title">Level</h3>
-                                            <span class="filter-group-desc">Where was this grant work done?</span>
-                                            <button class="clear-filter-group"><span class="raliance-close"></span> clear this filter</button>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox" checked="checked">
-                                                            <span>National</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>State</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Local</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="radio-style">
-                                                        <label>
-                                                            <input name="" type="radio">
-                                                            <span>Radio</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="filter-group">
-                                    <ul class="filter-group-list">
-                                        <li>
-                                            <h3 class="filter-group-title">Product</h3>
-                                            <span class="filter-group-desc">A tangible, planned outcome from the project</span>
-                                            <button class="clear-filter-group"><span class="raliance-close"></span> clear this filter</button>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox" checked="checked">
-                                                            <span>PDF</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Curriculum</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                 <span class="check-style">
-                                                    <label>
-                                                        <input name="" type="checkbox">
-                                                        <span>Video</span>
-                                                    </label>
-                                                </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="filter-group">
-                                    <ul class="filter-group-list">
-                                        <li>
-                                            <h3 class="filter-group-title">Strategies</h3>
-                                            <span class="filter-group-desc">What strategies were used?</span>
-                                            <a href="" class="learn-more-filter-group"><span class="raliance-what"></span> Learn more</a>
-                                            <button class="clear-filter-group"><span class="raliance-close"></span> clear this filter</button>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox" checked="checked">
-                                                            <span>Enhance Partnerships</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
+                                    </div>
+                                    <div class="filter-group">
+                                        <ul class="filter-group-list">
+                                            <li>
+                                                <h3 class="filter-group-title">Systems</h3>
+                                                <span class="filter-group-desc">This grant worked with or within what systems or institutions?</span>
+                                                <span class="clear-filter-group"><span class="raliance-close"></span> clear this filter</span>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox" >
+                                                                <span>Criminal justice</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Therapeutic/mental health</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Advocacy/rape crisis</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>School (K-12)</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Colleges/Universities</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Sport</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Fostercare</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Restaurant/hospitality industry</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-group">
+                                        <ul class="filter-group-list">
+                                            <li>
+                                                <h3 class="filter-group-title">Level</h3>
+                                                <span class="filter-group-desc">Where was this grant work done?</span>
+                                                <span class="clear-filter-group"><span class="raliance-close"></span> clear this filter</span>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox" >
+                                                                <span>National</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>State</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Local</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-group">
+                                        <ul class="filter-group-list">
+                                            <li>
+                                                <h3 class="filter-group-title">Product</h3>
+                                                <span class="filter-group-desc">A tangible, planned outcome from the project</span>
+                                                <span class="clear-filter-group"><span class="raliance-close"></span> clear this filter</span>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox" >
+                                                                <span>PDF</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Curriculum</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
                                                      <span class="check-style">
                                                         <label>
                                                             <input name="" type="checkbox">
-                                                            <span>Strengthen Policies</span>
+                                                            <span>Video</span>
                                                         </label>
                                                     </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Learning Circles</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Build Champions</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <ul class="filter-check-list">
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Provide Resources</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Educate and Train</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Measure Impact</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                     <span class="check-style">
-                                                        <label>
-                                                            <input name="" type="checkbox">
-                                                            <span>Raise Awareness</span>
-                                                        </label>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="filter-btn-box">
-                                    <button class="clear-filter-group"><span class="raliance-close"></span> clear filters</button>
-                                    <a href="#" class="btn">Apply</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-group">
+                                        <ul class="filter-group-list">
+                                            <li>
+                                                <h3 class="filter-group-title">Strategies</h3>
+                                                <span class="filter-group-desc">What strategies were used?</span>
+                                                <a href="" class="learn-more-filter-group"><span class="raliance-what"></span> Learn more</a>
+                                                <span class="clear-filter-group"><span class="raliance-close"></span> clear this filter</span>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox" >
+                                                                <span>Enhance Partnerships</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Strengthen Policies</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Learning Circles</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Build Champions</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul class="filter-check-list">
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Provide Resources</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Educate and Train</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Measure Impact</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                         <span class="check-style">
+                                                            <label>
+                                                                <input name="" type="checkbox">
+                                                                <span>Raise Awareness</span>
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-btn-box">
+                                        <button class="clear-filter-group" type="reset"><span class="raliance-close"></span> clear filters</button>
+                                        <button class="btn blue" type="submit">Apply</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -674,10 +719,12 @@
 </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-viewport-checker/1.8.7/jquery.viewportchecker.min.js"></script>
     <script src="assets/js/fullpage/jquery.fullpage.min.js"></script>
     <script src="assets/js/fullpage/jquery.fullpage.extensions.min.js"></script>
-    <script src="assets/js/parallax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.selectboxit/3.8.0/jquery.selectBoxIt.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/js/ion.rangeSlider.min.js"></script>
 	<script src="assets/js/smooth-scroll.min.js"></script>
 	<script src="assets/js/custom/scripts.js"></script>
 </body>
