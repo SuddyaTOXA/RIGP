@@ -159,7 +159,7 @@ img {
 .content {
   line-height: 1.4; }
   .content * {
-    margin-bottom: 12px; }
+    margin-bottom: 22px; }
     .content *:last-child {
       margin-bottom: 0; }
   .content a {
@@ -167,12 +167,16 @@ img {
     .content a:hover {
       opacity: 0.7;
       text-decoration: none; }
-  .content ul > li {
-    list-style-type: disc; }
-  .content ol > li {
-    list-style-type: decimal; }
+  .content ul {
+    padding-left: 20px; }
+    .content ul > li {
+      list-style-type: disc; }
+  .content ol {
+    padding-left: 20px; }
+    .content ol > li {
+      list-style-type: decimal; }
   .content li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     text-align: left; }
   .content blockquote {
     max-width: 640px;
@@ -2562,8 +2566,10 @@ a.result-visit-link,
   .section-detail.strategies .section-title {
     text-align: center; }
 
-  .strategies-list > li {
-    width: 100%; }
+  .strategies-list {
+    margin-bottom: 0; }
+    .strategies-list > li {
+      width: 100%; }
 
   .strategy-box {
     max-width: 420px;
@@ -2654,7 +2660,11 @@ a.result-visit-link,
     font-size: 45px; }
 
   .section-detail {
-    padding-top: 26px; }
+    padding-top: 26px;
+    padding-bottom: 60px; }
+    .section-detail.strategies {
+      padding-top: 40px;
+      padding-bottom: 60px; }
 
   .section-result {
     padding-bottom: 60px; } }

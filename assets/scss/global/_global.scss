@@ -91,7 +91,8 @@ img {
 .content {
   line-height: $line-height;
   * {
-    margin-bottom: 12px;
+    //margin-bottom: 12px;
+    margin-bottom: 22px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -104,17 +105,20 @@ img {
     }
   }
   ul {
+    padding-left: 20px;
+
     & > li {
       list-style-type: disc;
     }
   }
   ol {
+    padding-left: 20px;
     & > li {
       list-style-type: decimal;
     }
   }
   li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     text-align: left;
   }
   blockquote {

@@ -214,8 +214,11 @@
       }
     }
   }
-  .strategies-list > li {
-    width: 100%;
+  .strategies-list {
+    margin-bottom: 0;
+    > li {
+      width: 100%;
+    }
   }
   .strategy-box {
     max-width: 420px;
@@ -322,6 +325,11 @@
   }
   .section-detail {
     padding-top: 26px;
+    padding-bottom: 60px;
+    &.strategies {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
   }
   .section-result {
     padding-bottom: 60px;
