@@ -33,11 +33,12 @@ jQuery(function($){
 
     $(document).ready(function($){
         // for burger menu
-        // $('.mobile-menu-toggle, .mobile-menu-overlay').on('click', function(){
-        //     $('.mobile-menu-toggle').toggleClass('active');
-        //     $('.mobile-menu-wrap').toggleClass('showing');
-        //     $(document.body).toggleClass('overflow');
-        // });
+        $('.mobile-menu-toggle, .mobile-menu-overlay').on('click', function(){
+            $('.mobile-menu-toggle').toggleClass('active');
+            $('.mobile-menu-wrap').toggleClass('showing');
+            $("#header").toggleClass('active');
+            $(document.body).toggleClass('overflow');
+        });
         // $(window).on('scroll', function() {
         //     $('#fullpage').fullpage({
         //         anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
@@ -97,7 +98,16 @@ jQuery(function($){
             //show more filters
             if ($('.btn-show-more').length) {
                 $('.btn-show-more').on('click', function () {
-                   var box = $(this).parents('.filter-top-group');
+                   var btn = $(this),
+                       btnText = btn.text(),
+                       box = $(this).parents('.filter-top-group').next('.filter-bottom-group');
+
+                        if (btnText == 'Show more filters') {
+                            btn.text('Less filters');
+                        } else {
+                            btn.text('Show more filters');
+                        }
+                   box.slideToggle(350);
                 })
             }
 

@@ -61,6 +61,7 @@
   &.info {
     padding-top: 62px;
     padding-bottom: 40px;
+    text-align: center;
     background-color: #F9FAFC;
   }
   &.strategies {
@@ -133,6 +134,7 @@
       }
 
   .more-detail-info-list {
+    display: inline-block;
     text-align: center;
     margin: 0 -10px -20px;
     > li {

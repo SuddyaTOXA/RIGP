@@ -110,6 +110,10 @@
 *:focus:-moz-placeholder { opacity: 0; }
 
 .selectboxit-container {
+  display: block;
+  .selectboxit {
+    width: 100%;
+  }
   .selectboxit-open {
     @include border-radius(2px 2px 0 0);
     .selectboxit-default-arrow {
@@ -179,4 +183,7 @@
 .selectboxit-btn.selectboxit-enabled:active {
   background: $white;
   color: $color-text;
+}
+#categorySelectBoxItText {
+  max-width: 100% !important;
 }

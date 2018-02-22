@@ -1,0 +1,32 @@
+@media print { /* Стиль для печати */
+  #header {
+    display: none;
+  }
+  .mobile-menu-wrap,
+  nav,
+  .menu {
+    display: none;
+  }
+
+  .view-filters,
+  .btn_print,
+  .region-content-bottom-full {
+    display: none;
+  }
+
+  .section-search {
+    display: none;
+  }
+  .result-list > li {
+    width: 100%;
+  }
+  .result-box .content {
+    max-width: 100%;
+  }
+  .result-box {
+    min-height: auto;
+  }
+  footer {
+    display: none;
+  }
+}

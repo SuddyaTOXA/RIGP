@@ -14,6 +14,9 @@
   //box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
   .home & {
     @include header-background-gradient();
+    &.active {
+      background-color: $color-bg;
+    }
   }
   .container {
     position: relative;
@@ -57,178 +60,143 @@
 
 
 
-
-
-
-
-
-
-.mobile-menu-wrap,.mobile-menu-toggle {
+.mobile-menu-toggle,
+.mobile-menu-wrap {
   display: none;
 }
-
 .mobile-menu-wrap {
   position: fixed;
   z-index: 9999;
   right: 0;
   height: 0;
   width: 0;
-  top: 0;
-  -webkit-transition-delay: .3s;
-  -moz-transition-delay: .3s;
-  -o-transition-delay: .3s;
-  transition-delay: .3s
+  top: 55px;
+  -webkit-transition-delay: 0.35s;
+  -moz-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }
-
 .mobile-menu-wrap.showing {
   height: 100%;
   width: 100%;
   -webkit-transition-delay: 0s;
   -moz-transition-delay: 0s;
-  -ms-transition-delay: 0s;
   -o-transition-delay: 0s;
-  transition-delay: 0s
+  transition-delay: 0s;
 }
-
 .mobile-menu-overlay {
   position: absolute;
   z-index: 1;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.25);
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  -moz-transition: opacity .3s;
-  -o-transition: opacity .3s;
-  transition: opacity .3s
+  -webkit-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
 }
-
 .showing .mobile-menu-overlay {
-  opacity: 1
+  opacity: 1;
 }
-
-.mobile-menu-nav-wrap {
-  width: 370px;
-  max-width: 90%;
-  position: absolute;
-  right: -350px;
-  z-index: 2;
-  -webkit-transition: right .3s;
-  -moz-transition: right .3s;
-  -o-transition: right .3s;
-  transition: right .3s;
-  height: 100%;
-  overflow: auto;
-  background-color: #e4e9eb;
-  -webkit-box-shadow: -5px 5px 20px rgba(0,0,0,.1);
-  -moz-box-shadow: -5px 5px 20px rgba(0,0,0,.1);
-  -ms-box-shadow: -5px 5px 20px rgba(0,0,0,.1);
-  -o-box-shadow: -5px 5px 20px rgba(0,0,0,.1);
-  box-shadow: -5px 5px 20px rgba(0,0,0,.1);
-  padding: 80px 15px 20px
-}
-
-.showing .mobile-menu-nav-wrap {
-  right: 0
-}
-
 .mobile-menu-box {
-  margin-bottom: 20px
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: -100%;
+  z-index: 2;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  background-color: $color-bg;
+  -webkit-transition: right 0.35s;
+  -moz-transition: right 0.35s;
+  -o-transition: right 0.35s;
+  transition: right 0.35s;
+  overflow: auto;
 }
-
-.mobile-menu li a {
-  position: relative;
+.showing .mobile-menu-box {
+  right: 0;
+}
+.mobile-menu {
   display: block;
-  padding: 15px 15px 13px;
-  font-size: 14px;
-  color: #fff;
-  text-decoration: none
+  max-width: 320px;
+  margin: 0 auto;
 }
 
-.mobile-menu>li>a {
-  font-size: 16px
+.mobile-menu > li a {
+  display: block;
+  padding: 11px 10px 11px  20px;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
 }
-
-.mobile-menu li a:hover,.mobile-menu .current-menu-item>a,.mobile-menu .current_page_item>a,.mobile-menu .current-menu-parent>a,.mobile-menu .current-menu-ancestor>a,.mobile-menu .current-page-ancestor>a {
-  background-color: #182631;
-  color: #0cbcc9;
-  text-decoration: none
+.mobile-menu a:hover,
+.mobile-menu a:focus,
+.mobile-menu .active > a {
+  color: $color-text3;
+  text-decoration: none;
 }
-
 .mobile-menu .sub-menu {
-  display: block
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: -5px;
 }
-
-.mobile-menu .sub-menu a {
-  padding-left: 30px
+.mobile-menu > li .sub-menu a {
+  font-size: 15px;
+  padding: 8px 10px;
+  text-transform: inherit;
 }
-
-.mobile-menu .sub-menu .sub-menu a {
-  padding-left: 45px
-}
-
 .mobile-menu-toggle {
   position: absolute;
-  right: 40px;
-  top: 50%;
-  height: 50px;
-  width: 50px;
-  margin-top: -25px;
-  background-color: transparent;
+  z-index: 99999;
+  right: 0;
+  top: -15px;
+  height: 55px;
+  width: 55px;
   vertical-align: middle;
   cursor: pointer;
-  font-size: 26px
+  font-size: 26px;
 }
 
-.mobile-menu-toggle span:before,.mobile-menu-toggle span:after,.mobile-menu-toggle span {
-  content: '';
-  cursor: pointer;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 3px;
-  width: 20px;
-  background: #fff;
+.mobile-menu-toggle span:before,
+.mobile-menu-toggle span:after,
+.mobile-menu-toggle span {
   position: absolute;
   display: block;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s
-}
-
-.mobile-menu-wrap .mobile-menu-toggle span:before,.mobile-menu-wrap .mobile-menu-toggle span:after,.mobile-menu-wrap .mobile-menu-toggle span {
-  background: #0c7281
+  content: '';
+  cursor: pointer;
+  height: 2px;
+  width: 21px;
+  background-color: $color-bg3;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
 }
 
 .mobile-menu-toggle span {
+  z-index: 999;
   left: 50%;
   top: 50%;
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%)
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .mobile-menu-toggle span:before {
-  top: -6px
+  top: -7px;
 }
 
 .mobile-menu-toggle span:after {
-  bottom: -6px
-}
-
-.mobile-menu-wrap .mobile-menu-toggle {
-  right: 0;
-  top: 0;
-  margin-top: 0;
-  background-color: transparent
+  bottom: -7px;
 }
 
 .mobile-menu-toggle.active span {
-  background-color: transparent
+  background-color: transparent;
 }
 
 .mobile-menu-toggle.active span:before {
@@ -238,7 +206,6 @@
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 0;
-  background: #fff
 }
 
 .mobile-menu-toggle.active span:after {
@@ -248,92 +215,4 @@
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   bottom: 0;
-  background: #fff
 }
-
-.mobile-menu-wrap .mobile-menu-toggle.active span:before,.mobile-menu-wrap .mobile-menu-toggle.active span:after {
-  background: #0c7281
-}
-
-.mobile-menu-toggle:not(.active):hover span,.mobile-menu-toggle:hover span:before,.mobile-menu-toggle:hover span:after,.mobile-menu-toggle:not(.active):active span,.mobile-menu-toggle:active span:before,.mobile-menu-toggle:active span:after,.mobile-menu-wrap .mobile-menu-toggle:not(.active):hover span,.mobile-menu-wrap .mobile-menu-toggle:hover span:before,.mobile-menu-wrap .mobile-menu-toggle:hover span:after,.mobile-menu-wrap .mobile-menu-toggle:not(.active):active span,.mobile-menu-wrap .mobile-menu-toggle:active span:before,.mobile-menu-wrap .mobile-menu-toggle:active span:after {
-  background: #0cbcc9
-}
-
-//.add-nav {
-//  float: right;
-//  max-width: 60%;
-//  margin-top: 20px;
-//  margin-right: 64px
-//}
-//
-//.add-nav li {
-//  float: left;
-//  margin: 0 18px
-//}
-//
-//.add-nav a {
-//  font-size: 1.063em;
-//  color: #fff
-//}
-//
-//.add-nav a:hover,.add-nav a:focus,.add-nav .active>a,.add-nav:not(.front) .current-menu-item>a,.add-nav:not(.front) .current_page_item>a {
-//  color: #0cbcc9;
-//  text-decoration: none
-//}
-//
-//.nav-menu a.nav-download {
-//  position: relative;
-//  display: block;
-//  padding: 17px 10px 15px 65px;
-//  font: 1em/1.75 gotham-bold,myriadproregular,Arial,sans-serif;
-//  text-transform: uppercase;
-//  color: #fff
-//}
-//
-//.nav-menu a.nav-download:not(:first-child) {
-//  margin-top: 10px
-//}
-//
-//.mobile-menu-box a.nav-download,.mobile-menu-box a.nav-download span {
-//  color: #0c7281
-//}
-//
-//a.nav-download span {
-//  position: relative;
-//  padding-bottom: 1px;
-//  border-bottom: 2px solid #e48e25;
-//  color: #fff;
-//  white-space: nowrap;
-//  font-size: 14px;
-//  -webkit-transition: .25s;
-//  -moz-transition: .25s;
-//  -o-transition: .25s;
-//  transition: .25s
-//}
-//
-//a.nav-download:hover span,a.nav-download:focus span {
-//  border-bottom-color: transparent;
-//  color: #0cbcc9
-//}
-//
-//.nav-download>.fa {
-//  position: absolute;
-//  display: inline-block;
-//  top: 50%;
-//  left: 23px;
-//  background: #e48e25;
-//  width: 26px;
-//  height: 26px;
-//  text-align: center;
-//  font-size: 15px;
-//  line-height: 27px;
-//  color: #fff;
-//  -webkit-border-radius: 50%;
-//  -moz-border-radius: 50%;
-//  border-radius: 50%;
-//  -moz-transform: translateY(-50%);
-//  -ms-transform: translateY(-50%);
-//  -webkit-transform: translateY(-50%);
-//  -o-transform: translateY(-50%);
-//  transform: translateY(-50%)
-//}
