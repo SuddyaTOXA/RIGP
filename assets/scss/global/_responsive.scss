@@ -116,6 +116,15 @@
       }
     }
   }
+  .filter-top-group-list {
+    .filter-group-title {
+      margin-top: 25px;
+    }
+  }
+  .irs {
+    margin-top: 14px;
+    height: 35px;
+  }
 }
 
 @media all and (max-width: 960px) {
@@ -366,6 +375,15 @@
     min-width: 240px;
     padding-top: 16px;
     padding-bottom: 15px;
+  }
+  .filter-top-group-list {
+    .filter-group-title {
+      margin-top: 16px;
+    }
+  }
+  .irs {
+    margin-top: 4px;
+    height: 45px;
   }
 }
 

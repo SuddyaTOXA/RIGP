@@ -312,7 +312,7 @@
           color: $white;
           text-align: center;
           background-color: $color-bg3;
-          @include border-radius(0 0 4em 4em);
+          @include border-radius(5px 10px 4em 4em);
           .fas {
             font-size: 30px;
             line-height: 50px;
