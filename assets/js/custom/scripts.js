@@ -2,7 +2,6 @@ jQuery(function($){
     $(document).ready(function($){
         // for burger menu
         $('.mobile-menu-toggle, .mobile-menu-overlay, .mobile-menu a').on('click', function(){
-            $().toggleClass(''),
             $('.mobile-menu-toggle').toggleClass('active');
             $('.mobile-menu-wrap').toggleClass('showing');
             $("#header").toggleClass('active');
