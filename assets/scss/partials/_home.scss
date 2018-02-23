@@ -10,6 +10,18 @@
     @include bg();
     background-attachment: fixed;
   }
+  .home.fp-responsive & {
+    min-height: initial;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &.slide-home {
+      padding-top: 75px;
+      padding-bottom: 100px;
+    }
+  }
+  &.slide-home {
+    padding-bottom: 100px;
+  }
   &.overlay {
     position: relative;
     &:before {
@@ -57,11 +69,14 @@
     width: 100%;
     min-height: 200px;
     vertical-align: middle;
-    padding-right: 120px;
   }
   &:not(.footer) .fp-tableCell {
     padding-top: 100px;
-    padding-bottom: 30px
+    padding-bottom: 30px;
+    .fp-responsive & {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
   &.footer {
     min-height: auto;
@@ -78,7 +93,6 @@
     }
   }
 }
-
 .right-nav {
   position: fixed;
   top: 50%;
@@ -104,8 +118,10 @@
   }
   > li {
     position: relative;
-    padding-bottom: 29px;
     text-align: right;
+    &:not(:last-child) {
+      padding-bottom: 34px;
+    }
     &.active a {
       opacity: 1;
       &:after {
@@ -131,8 +147,9 @@
     a {
       position: relative;
       padding-right: 27px;
-      font-size: 1.5em;
-      font-weight: 400;
+      font-family: $font-gotham;
+      font-size: $size-big;
+      font-weight: $light;
       color: $white;
       opacity: .3;
       cursor: pointer;
@@ -161,6 +178,15 @@
   }
 }
 
+.fp-responsive  {
+  .fp-auto-height-responsive {
+    .fp-slide,
+    .fp-tableCell,
+    &.fp-section {
+
+    }
+  }
+}
 
 #fp-nav ul li a span,.fp-slidesNav ul li a span {
   background: #fff
@@ -220,6 +246,10 @@ a.mk-scroll-down-block,
   &:hover,
   &:focus {
     bottom: 25px;
+    text-decoration: none;
+  }
+  .raliance-arrow-down {
+    font-size: 52px;
   }
 }
 

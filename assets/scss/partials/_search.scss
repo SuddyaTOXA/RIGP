@@ -61,6 +61,7 @@
               display: inline-block;
               padding-top: 6px;
               padding-right: 20px;
+              padding-left: 5px; //only top
             }
             .filter-group-title {
               margin-top: 16px;
@@ -108,7 +109,7 @@
             }
         .filter-group {
           padding-top: 18px;
-          padding-bottom: 17px;
+          padding-bottom: 22px;
         }
           .filter-group-list {
             margin: 0 -10px;
@@ -140,9 +141,12 @@
             .clear-filter-group {}
             .filter-check-list {
               > li {
-                &:not(:last-child) {
-                  margin-bottom: 5px;
-                }
+                overflow: hidden;
+                clear: both;
+                padding-top: 5px;
+                //&:not(:last-child) {
+                  margin-bottom: 10px;
+                //}
               }
             }
               .check-style,
@@ -193,8 +197,16 @@
 #category {
   width: 100% !important;
 }
-
-
+.check-style {
+  display: block;
+  label {
+    display: block;
+    float: left;
+  }
+  span {
+    display: block;
+  }
+}
 
 
 
@@ -242,7 +254,7 @@
       @include transform(0, -13px);
     }
     .content {
-      max-width: 630px;
+      max-width: 620px;
       font-size: $size-smaller;
       letter-spacing: -.01em;
       word-spacing: .02em;
@@ -263,8 +275,8 @@
       }
     }
       .result-box {
+        overflow: hidden;
         min-height: 333px;
-        //padding: 0 10px 10px 0;
         background-color: $white;
         @include border-radius();
         .content {
@@ -365,7 +377,7 @@
               position: relative;
               font-size: 15px;
               padding-right: 11px;
-              top: -1px;
+              top: 2px;
               &:before {
                 color: $color-text3;
                 @include transition($transition-link);

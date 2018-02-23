@@ -99,8 +99,9 @@ img {
   }
   a {
     color: $color-text3;
+    text-decoration: underline;
     &:hover {
-      opacity: 0.7;
+      //opacity: 0.7;
       text-decoration: none;
     }
   }

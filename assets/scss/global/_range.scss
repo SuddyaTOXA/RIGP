@@ -38,6 +38,7 @@
   position: absolute;
   display: block;
   left: 0; width: 0;
+  //@include transition();
 }
 .irs-bar-edge {
   position: absolute;
@@ -91,8 +92,11 @@
   left: 0;
   cursor: default;
   white-space: nowrap;
+  //@include transition();
 }
+.irs-from, .irs-to {
 
+}
 .irs-grid {
   position: absolute;
   display: none;
@@ -217,11 +221,9 @@
   height: 15px;
   border: 1px solid $color-bg3;
   background: $color-bg3;
-  //background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(220,220,220,1) 20%,rgba(255,255,255,1) 100%); /* W3C */
   @include border-radius(50%);
-  //box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   cursor: pointer;
-  @include transition();
+  //@include transition();
 }
 
 .irs-slider.state_hover, .irs-slider:hover {

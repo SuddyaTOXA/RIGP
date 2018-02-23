@@ -84,6 +84,26 @@
   .strategy-title {
     text-align: center;
   }
+  .section-detail {
+    &.strategies {
+      .section-title {
+        text-align: center;
+      }
+    }
+  }
+  .strategy-desc {
+    .content {
+      text-align: center;
+    }
+  }
+  .right-nav {
+    right: 20px;
+  }
+  .section {
+    .container-box {
+      padding-right: 70px;
+    }
+  }
 }
 
 @media all and (max-width: 991px) {
@@ -148,7 +168,7 @@
   .footer-contacts {
     float: none;
     width: 100%;
-    padding: 0;
+    padding: 10px 0 0;
   }
   .footer-contacts {
     margin-bottom: 20px;
@@ -169,18 +189,6 @@
       padding-right: 0;
       width: 180px;
     }
-    //  float: none;
-    //  width: 100%;
-    //  margin-bottom: 20px;
-    //  a.btn,
-    //  .btn {
-    //    max-width: 179px;
-    //  }
-    //}
-    //.right-box {
-    //  float: none;
-    //  width: 100%;
-    //}
   }
   .detail-price-box,
   .section-title-box {
@@ -215,6 +223,7 @@
     }
   }
   .strategies-list {
+    margin-top: 40px;
     margin-bottom: 0;
     > li {
       width: 100%;
@@ -242,6 +251,20 @@
       }
       width: -webkit-calc(#{$coll-10-1 * 5} - 3px);
       width: calc(#{$coll-10-1 * 5} - 3px);
+    }
+  }
+  .check-style {
+    span{
+      &:before {
+        top: 50%;
+        @include transform(0, -55%);
+      }
+    }
+  }
+  .filter-check-list {
+    > li {
+      padding-bottom: 5px;
+      margin-bottom: 5px;
     }
   }
   .result-list {
@@ -334,7 +357,16 @@
   .section-result {
     padding-bottom: 60px;
   }
-
+  .result-box {
+    .content {
+      height: auto;
+    }
+  }
+  a.btn.big, .btn.big {
+    min-width: 240px;
+    padding-top: 16px;
+    padding-bottom: 15px;
+  }
 }
 
 @media (max-width: 767px) and (max-height: 480px) {
@@ -366,7 +398,7 @@
       float: none;
       width: 100%;
       .inner-box {
-        margin: 0 auto 20px;
+        margin: 0 auto 30px;
       }
     }
   }

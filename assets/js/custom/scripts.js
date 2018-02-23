@@ -39,19 +39,12 @@ jQuery(function($){
             $("#header").toggleClass('active');
             $(document.body).toggleClass('overflow');
         });
-        // $(window).on('scroll', function() {
-        //     $('#fullpage').fullpage({
-        //         anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
-        //         menu: '#menu'
-        //     });
-        // });
-        // FOR FULLPAGE
 
         //or filters
         if ($('.filter-box').length) {
             //for select
             if ($("select#category").length) {
-                $("select#category").selectBoxIt({
+                var selectBox = $("select#category").selectBoxIt({
                     autoWidth: false
                 });
             }
@@ -69,6 +62,9 @@ jQuery(function($){
                         to: 2016,
                         step: 1
                     });
+
+                    var rangeSlider = $("#range").data("ionRangeSlider");
+
                 }
             // }
 
@@ -81,7 +77,7 @@ jQuery(function($){
                         radio  = parerntBox.find('input[type=radio]');
 
                     check.removeAttr('checked');
-                    radio.removeAttr('checked')
+                    radio.removeAttr('checked');
                 })
             }
 
@@ -92,6 +88,12 @@ jQuery(function($){
                         inputVal = parentBox.find('.clear');
 
                         inputVal.removeClass('clear');
+                        if (rangeSlider) {
+                            rangeSlider.reset();
+                        }
+                        if (selectBox) {
+                            selectBox.selectBoxIt('selectOption', 0);
+                        }
                 })
             }
 
@@ -110,6 +112,8 @@ jQuery(function($){
                    box.slideToggle(350);
                 })
             }
+
+
 
             //clear input text
             if ($('.input-box input[type=text]')) {
@@ -173,19 +177,17 @@ jQuery(function($){
                     keyboardScrolling: false,
                     verticalCentered: true,
                     css3: false,
-                    anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
+                    anchors: ['vision', 'grants', 'contact', 'testimonial', 'since'],
                     menu: '#myMenu',
                     navigationPosition: 'right',
-                    // continuousHorizontal: true,
-                    // continuousHorizontalKey: 'cmFsaWFuY2Uub3JnX3RHNVkyOXVkR2x1ZFc5MWMwaHZjbWw2YjI1MFlXdz1kYkk=',
                     slidesNavigation: true,
                     slidesNavPosition: 'bottom',
-                    // controlArrows: true,
                     responsiveHeight: respHeight + 20,
                     responsiveWidth: 640,
                     afterLoad: function (anchorLink, index) {
+                        // alert('slide --> ' + index);
                         setTimeout(function () {
-                            if ( !$('body').hasClass('fp-responsive') ) {
+                            // if ( !$('body').hasClass('fp-responsive') ) {
                                 var slideBox = $('.slide-box').eq(index - 1),
                                     slideTitle = slideBox.find('.slide-title, .since-title'),
                                     slideContent = slideBox.find('.content *, .since-top-box'),
@@ -212,23 +214,8 @@ jQuery(function($){
                                 if (quoteAuthor.hasClass('invisible')) {
                                     quoteAuthor.removeClass('invisible').addClass('visible animated fadeInUp');
                                 }
-                            }
+                            // }
                         }, 10)
-                    },
-                    onLeave: function(index, nextIndex, direction){
-                        var leavingSection = $(this),
-                            header = $('#header');
-
-                        //after leaving section 2
-                        // if(index == 1 && direction =='down'){
-                        //     if (!(header.hasClass('fullpage-bg'))) {
-                        //         header.addClass('fullpage-bg');
-                        //     }
-                        // } else if(index == 2 && direction == 'up'){
-                        //     if (header.hasClass('fullpage-bg')) {
-                        //         header.removeClass('fullpage-bg');
-                        //     }
-                        // }
                     }
                 });
 

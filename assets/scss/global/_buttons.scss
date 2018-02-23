@@ -120,7 +120,21 @@ a.btn, .btn {
       }
     }
   }
-  &.orange {}
+  &.yellow {
+    background-color: $color-bg2;
+    border-color: $color-bg2;
+    &:hover,
+    &:focus {
+      color: $color-text2;
+      background-color: transparent;
+      .raliance-arrow-right {
+        &:before {
+          color: $color-text2;
+        }
+      }
+    }
+  }
+
   &.grey {
     background-color: $color-bg10;
     border-color: $color-bg10;

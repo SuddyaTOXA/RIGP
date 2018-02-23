@@ -117,7 +117,7 @@
   .selectboxit-open {
     @include border-radius(2px 2px 0 0);
     .selectboxit-default-arrow {
-      @include css3-prefix('transform' , 'translate(0, -50%) rotate(225deg)');
+      @include css3-prefix('transform' , 'translate(0, -30%) rotate(225deg)');
     }
   }
   .selectboxit-default-arrow {
