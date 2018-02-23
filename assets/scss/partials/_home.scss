@@ -82,12 +82,12 @@
     }
   }
   &.footer {
-    min-height: auto;
+    min-height: initial;
     display: block;
     z-index: 79;
     padding: 0;
     .container {
-      min-height: auto;
+      min-height: initial;
       display: block
     }
     .fp-tableCell {
@@ -303,7 +303,7 @@ a.mk-scroll-down-block,
           }
           .slide-contact-title {
             //@include css3-prefix('transform','scale(.95)');
-            font-weight: $bold;
+            //font-weight: $bold;
           }
         }
       }

@@ -1,4 +1,4 @@
-@media print { /* Стиль для печати */
+@media print {
   #header {
     display: none;
   }
@@ -24,7 +24,7 @@
     max-width: 100%;
   }
   .result-box {
-    min-height: auto;
+    min-height: initial;
   }
   footer {
     display: none;
