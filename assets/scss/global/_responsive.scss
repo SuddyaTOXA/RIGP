@@ -146,6 +146,9 @@
 
 
 @media all and (max-width: 767px) {
+  .overflow.mobile {
+    overflow: hidden !important;
+  }
   .right-nav {
     display: none;
   }

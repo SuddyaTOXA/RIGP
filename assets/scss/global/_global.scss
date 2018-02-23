@@ -37,11 +37,11 @@ a:hover                        { text-decoration:underline; }
 .display                       { display:block !important; }
 .inline                        { display:inline !important; }
 .overflow                      { overflow:hidden !important; }
+.overflow.mobile               { overflow: visible !important; }
 .align-r                       { text-align:right !important; }
 .align-l                       { text-align:left !important; }
 .align-c                       { text-align:center !important; }
 .clear                         { clear:both; }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
